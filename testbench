@@ -1,0 +1,21 @@
+`timescale 1ns / 1ps
+
+module alu;
+reg[7:0] A,B;
+reg[2:0]sel;
+wire[7:0]out;
+ALU result(.A(A),.B(B),.sel(sel),.out(out));
+initial begin
+A=7'b1010101;
+B=7'b1010001;
+sel=3'b000;
+#10 sel=3'b001;
+#10 sel=3'b001;
+#10 sel=3'b011;
+#10 sel=3'b100;
+#10 sel=3'b101;
+#10 sel3'b111;
+$finish;
+end
+
+endmodule
